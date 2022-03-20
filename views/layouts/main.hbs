@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/main.css">
+  <title>A22: Express 基礎驗收</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">回到首頁</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/portfolio">Portfolio</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  {{{ body }}}
+  <script>
+    const currentPageName = document.querySelector('h1').textContent
+    const currentPagePath = Array.from(document.querySelectorAll('a')).filter(e => 
+    e.textContent === currentPageName)
+
+    if (currentPagePath.length){
+      currentPagePath[0].classList.add('current-page')
+    }
+  </script>
+</body>
+</html>
